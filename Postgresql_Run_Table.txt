@@ -1,0 +1,14 @@
+Postgresql
+
+CREATE TABLE public.simpletable (
+	id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+	nome varchar(30) NULL,
+	datacriacao date NOT NULL,
+	idade varchar NULL
+);
+
+insert into public.simpletable (nome, datacriacao, idade) VALUES 
+('Bruno Murta', NOW(), 22);
+
+
+select id, nome, to_char(datacriacao, 'DD/MM/YYYY'), idade from simpletable s;
